@@ -1,33 +1,113 @@
 .App {
+  background: #222;
+  color: #fff;
+  min-height: 100vh;
+  padding: 5px 25px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.App h1 {
+  font-size: 25px;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App h2 {
+  color: #f6c945;
+  text-transform: uppercase;
+}
+
+.App nav {
+  display: flex;
+  /* justify-content: flex-end; */
+  align-items: center;
+  min-height: 50px;
+}
+
+.App nav a {
+  padding: 7px 10px;
+  color: #f3f3f3;
+  text-decoration: none;
+}
+
+.App nav a:hover {
+  color: #f6c945;
+}
+.App nav a.selected {
+  color: #f6c945;
+  background-color: #303030;
+  border-bottom: 2px solid #f6c945;
+}
+
+.home-container,
+.puzzle-page {
+  height: calc(100vh - 60px);
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.gif-container {
+  max-width: 960px;
+  margin: 10px 0;
+  padding: 10px 0;
 }
 
-@keyframes App-logo-spin {
+.gif-container img {
+  cursor: grab;
+  height: 180px;
+  width: 240px;
+}
+
+.puzzle-container {
+  width: 920px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.puzzle-container img {
+  cursor: grab;
+  width: 180px;
+  margin: 0 2px;
+}
+
+.puzzle-page button {
+  background: #222;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px #f6c945 solid;
+  color: #f6c945;
+  outline: none;
+}
+
+.puzzle-page button:hover {
+  background: #f6c945;
+  border: 1px #f6c945 solid;
+  color: #222;
+  cursor: pointer;
+}
+
+@keyframes zoomIn {
   from {
-    transform: rotate(0deg);
+    font-size: 0px;
   }
+
   to {
-    transform: rotate(360deg);
+    font-size: 100px;
   }
+}
+
+.success-message {
+  position: absolute;
+  font-size: 100px;
+  top: 52%;
+  animation: zoomIn 3s;
 }
